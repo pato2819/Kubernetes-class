@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-app-replicaset
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: default
+  template:
+    metadata:
+      labels:
+        app: default
+    spec:
+      containers:
+      - name: web-app
+        image: pato2819/web-httpd-ubuntu:1.0
+        ports:
+        - name: web-app
+          containerPort:  80
+          protocol: TCP
+       

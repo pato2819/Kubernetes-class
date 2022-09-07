@@ -1,0 +1,39 @@
+PODS
+# correr un pod de manera imperativa
+kubectl run [nombre del pod] --image=[nombre de la imagen]
+kubectl run miprimerpod --image=nginx 
+
+Correr recursos k8s 
+#manera declarativa
+kubectl apply -f miprimerpod [nombre del file] 
+kubectl apply -f miprimerpod.yaml
+
+#manera imperativa
+kubectl create -f [nombre de file]
+kubectl create -f miprimerpod.yaml
+
+REPLICASET 
+kubectl get replicaset 
+kubectl delete rs [nombre del replicaset]
+
+DEPLOYMENT
+kubectl get deployment
+kubectl describe deploy web-deployment
+
+historial de actualizaciones:
+kubectl rollout history deployment.v1.apps/[deployment name]
+kubectl rollout history deployment.v1.apps/web-deployment
+
+historial de actulizacion detallada:
+kubectl rollout history deployment.v1.apps/[deployment name] --revision [numero de revision]
+kubectl rollout history deployment.v1.apps/web-deployment --revision 1
+
+regresar una version anterior:
+kubectl rollout undo deployment/[deployment name] --to-revision=[numero de revision]
+kubectl rollout undo deployment/web-deployment --to-revision=2
+
+manera imperativa:
+crear deployment
+kubectl create deployment [nombre del deployment] --image=[nombre de la image]
+escalar deployment
+kubectl create deployment [nombre del deployment] --image=[nombre de la image] --replicas [numero de replicas]

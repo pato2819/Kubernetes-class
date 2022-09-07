@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "web-app"
+  namespace: default
+  labels:
+    app: "web-app"
+spec:
+  containers:
+  - name: web-app
+    image: "pato2819/web-httpd-ubuntu:1.0"
+    resources:
+      limits:
+        cpu: 200m
+        memory: 500Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+  
+    ports:
+    - containerPort:  80
+      name:  web-app
+   
