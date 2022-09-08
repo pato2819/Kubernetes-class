@@ -16,8 +16,18 @@ spec:
       requests:
         cpu: 100m
         memory: 200Mi
-  
     ports:
     - containerPort:  80
       name:  web-app
+    volumeMounts:
+      - mountPath: /test
+        name: first-volume
+  volumes:
+    - name: first-volume
+      hostPath:
+        path: /data
+        type: DirectoryOrCreate
+
+        
+
    

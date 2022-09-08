@@ -37,3 +37,6 @@ crear deployment
 kubectl create deployment [nombre del deployment] --image=[nombre de la image]
 escalar deployment
 kubectl create deployment [nombre del deployment] --image=[nombre de la image] --replicas [numero de replicas]
+
+Entrar un contenedor 
+kubectl exec --stdin --tty web-app -- /bin/bash
