@@ -22,7 +22,7 @@ spec:
           # - Each init container must complete successfully before the next one starts.
       containers:
       - name:  web-app
-        image: nginx
+        image: pato2819/web-httpd-ubuntu:1.0
         resources:
           requests:
             cpu: 100m

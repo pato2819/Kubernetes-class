@@ -40,3 +40,4 @@ kubectl create deployment [nombre del deployment] --image=[nombre de la image] -
 
 Entrar un contenedor 
 kubectl exec --stdin --tty web-app -- /bin/bash
+kubectl exec -it frontend -- bash
