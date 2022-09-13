@@ -5,10 +5,10 @@ metadata:
   namespace: default
 spec:
   selector:
-    type: default
+    tag: web-app
   type: NodePort
   ports:
   - name: nodeport 
     protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 80
